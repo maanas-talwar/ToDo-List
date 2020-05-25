@@ -3,23 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mobile_navigation"
-    app:startDestination="@+id/nav_home">
+    app:startDestination="@+id/nav_most_imp_list">
 
     <fragment
-        android:id="@+id/nav_home"
-        android:name="com.example.todozzz.ui.home.HomeFragment"
-        android:label="@string/menu_home"
-        tools:layout="@layout/fragment_home" />
+        android:id="@+id/nav_most_imp_list"
+        android:name="com.example.todozzz.ui.mostImpList.MostImpListFragment"
+        android:label="@string/menu_most_imp_list"
+        tools:layout="@layout/fragment_most_imp_list" />
 
     <fragment
         android:id="@+id/nav_master_list"
         android:name="com.example.todozzz.ui.masterList.MasterListFragment"
-        android:label="@string/menu_gallery"
+        android:label="@string/menu_master_list"
         tools:layout="@layout/fragment_master_list" />
 
     <fragment
-        android:id="@+id/nav_slideshow"
-        android:name="com.example.todozzz.ui.slideshow.SlideshowFragment"
-        android:label="@string/menu_slideshow"
-        tools:layout="@layout/fragment_slideshow" />
+        android:id="@+id/nav_weekly_list"
+        android:name="com.example.todozzz.ui.weeklyList.WeeklyListFragment"
+        android:label="@string/menu_weekly_list"
+        tools:layout="@layout/fragment_weekly_list" />
 </navigation>

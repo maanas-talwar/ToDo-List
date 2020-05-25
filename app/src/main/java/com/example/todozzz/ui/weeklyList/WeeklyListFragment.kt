@@ -1,4 +1,4 @@
-package com.example.todozzz.ui.slideshow
+package com.example.todozzz.ui.weeklyList
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,20 +10,20 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.todozzz.R
 
-class SlideshowFragment : Fragment() {
+class WeeklyListFragment : Fragment() {
 
-    private lateinit var slideshowViewModel: SlideshowViewModel
+    private lateinit var weeklyListViewModel: WeeklyListViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel::class.java)
-        val root = inflater.inflate(R.layout.fragment_slideshow, container, false)
-        val textView: TextView = root.findViewById(R.id.text_slideshow)
-        slideshowViewModel.text.observe(viewLifecycleOwner, Observer {
+        weeklyListViewModel =
+                ViewModelProviders.of(this).get(WeeklyListViewModel::class.java)
+        val root = inflater.inflate(R.layout.fragment_weekly_list, container, false)
+        val textView: TextView = root.findViewById(R.id.text_weekly_list)
+        weeklyListViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
         return root

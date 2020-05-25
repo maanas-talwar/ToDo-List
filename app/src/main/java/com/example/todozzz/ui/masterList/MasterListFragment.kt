@@ -22,7 +22,7 @@ class MasterListFragment : Fragment() {
         masterListViewModel =
                 ViewModelProviders.of(this).get(MasterListViewModel::class.java)
         val root = inflater.inflate(R.layout.fragment_master_list, container, false)
-        val textView: TextView = root.findViewById(R.id.text_gallery)
+        val textView: TextView = root.findViewById(R.id.text_master_list)
         masterListViewModel.text.observe(viewLifecycleOwner, Observer {
             textView.text = it
         })
