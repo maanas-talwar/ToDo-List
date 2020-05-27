@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.todozzz.R
+import com.example.todozzz.database.TasksDatabase
 import com.example.todozzz.databinding.FragmentMasterListBinding
 
 class MasterListFragment : Fragment() {
@@ -25,9 +26,24 @@ class MasterListFragment : Fragment() {
         masterListViewModel =
                 ViewModelProviders.of(this).get(MasterListViewModel::class.java)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_master_list, container, false)
-        masterListViewModel.text.observe(viewLifecycleOwner, Observer {
-            binding.textMasterList.text = it
-        })
+
+        val application = requireNotNull(this.activity).application
+
+        val dataSource = TasksDatabase.getInstance(application).masterListDao
+
+        val viewModelFactory = MasterListViewModelFactory(dataSource, application)
+
+        val masterListViewModel =
+            ViewModelProviders.of(
+                this, viewModelFactory).get(MasterListViewModel::class.java)
+
+        binding.setLifecycleOwner(this)
+
+        binding.masterListViewModel = masterListViewModel
+
+//        masterListViewModel.text.observe(viewLifecycleOwner, Observer {
+//            binding.textMasterList.text = it
+//        })
         return binding.root
     }
 }

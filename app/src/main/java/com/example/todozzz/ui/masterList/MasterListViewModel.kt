@@ -1,13 +1,10 @@
 package com.example.todozzz.ui.masterList
 
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
+import com.example.todozzz.database.MasterListDao
 
-class MasterListViewModel : ViewModel() {
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is Master List Fragment"
-    }
-    val text: LiveData<String> = _text
+class MasterListViewModel(
+    val database: MasterListDao,
+    application: Application) : AndroidViewModel(application) {
 }
