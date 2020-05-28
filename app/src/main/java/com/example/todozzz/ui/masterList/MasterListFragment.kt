@@ -41,11 +41,6 @@ class MasterListFragment : Fragment() {
 
         binding.masterListViewModel = masterListViewModel
 
-
-//        *****prev state*****
-//        masterListViewModel.text.observe(viewLifecycleOwner, Observer {
-//            binding.textMasterList.text = it
-//        })
         return binding.root
     }
 }
