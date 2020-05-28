@@ -16,34 +16,36 @@ class MasterListFragment : Fragment() {
 
     private lateinit var binding: FragmentMasterListBinding
 
-    private lateinit var masterListViewModel: MasterListViewModel
+//    private lateinit var masterListViewModel: MasterListViewModel
 
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-        masterListViewModel =
-                ViewModelProviders.of(this).get(MasterListViewModel::class.java)
+//        masterListViewModel =
+//                ViewModelProviders.of(this).get(MasterListViewModel::class.java)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_master_list, container, false)
 
-//        val application = requireNotNull(this.activity).application
-//
-//        val dataSource = TasksDatabase.getInstance(application).masterListDao
-//
-//        val viewModelFactory = MasterListViewModelFactory(dataSource, application)
-//
-//        val masterListViewModel =
-//            ViewModelProviders.of(
-//                this, viewModelFactory).get(MasterListViewModel::class.java)
-//
-//        binding.setLifecycleOwner(this)
-//
-//        binding.masterListViewModel = masterListViewModel
+        val application = requireNotNull(this.activity).application
 
-        masterListViewModel.text.observe(viewLifecycleOwner, Observer {
-            binding.textMasterList.text = it
-        })
+        val dataSource = TasksDatabase.getInstance(application).masterListDao
+
+        val viewModelFactory = MasterListViewModelFactory(dataSource, application)
+
+        val masterListViewModel =
+            ViewModelProviders.of(
+                this, viewModelFactory).get(MasterListViewModel::class.java)
+
+        binding.setLifecycleOwner(this)
+
+        binding.masterListViewModel = masterListViewModel
+
+
+//        *****prev state*****
+//        masterListViewModel.text.observe(viewLifecycleOwner, Observer {
+//            binding.textMasterList.text = it
+//        })
         return binding.root
     }
 }

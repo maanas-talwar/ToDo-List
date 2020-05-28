@@ -7,15 +7,17 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.example.todozzz.database.MasterListDao
 
-//class MasterListViewModel(
-//    val database: MasterListDao,
-//    application: Application) : AndroidViewModel(application) {
-//}
-
-class MasterListViewModel : ViewModel() {
-
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is Master List Fragment"
-    }
-    val text: LiveData<String> = _text
+class MasterListViewModel(
+    val database: MasterListDao,
+    application: Application) : AndroidViewModel(application) {
 }
+
+
+//*****prev state*****
+//class MasterListViewModel : ViewModel() {
+//
+//    private val _text = MutableLiveData<String>().apply {
+//        value = "This is Master List Fragment"
+//    }
+//    val text: LiveData<String> = _text
+//}
