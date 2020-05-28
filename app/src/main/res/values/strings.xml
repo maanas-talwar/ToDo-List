@@ -8,5 +8,7 @@
     <string name="menu_most_imp_list">Most Important Tasks</string>
     <string name="menu_master_list">Master List</string>
     <string name="menu_weekly_list">Weekly List</string>
+    <string name="task_name">Task name</string>
+    <string name="add_task">Add Task</string>
 
 </resources>
