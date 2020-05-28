@@ -27,23 +27,23 @@ class MasterListFragment : Fragment() {
                 ViewModelProviders.of(this).get(MasterListViewModel::class.java)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_master_list, container, false)
 
-        val application = requireNotNull(this.activity).application
+//        val application = requireNotNull(this.activity).application
+//
+//        val dataSource = TasksDatabase.getInstance(application).masterListDao
+//
+//        val viewModelFactory = MasterListViewModelFactory(dataSource, application)
+//
+//        val masterListViewModel =
+//            ViewModelProviders.of(
+//                this, viewModelFactory).get(MasterListViewModel::class.java)
+//
+//        binding.setLifecycleOwner(this)
+//
+//        binding.masterListViewModel = masterListViewModel
 
-        val dataSource = TasksDatabase.getInstance(application).masterListDao
-
-        val viewModelFactory = MasterListViewModelFactory(dataSource, application)
-
-        val masterListViewModel =
-            ViewModelProviders.of(
-                this, viewModelFactory).get(MasterListViewModel::class.java)
-
-        binding.setLifecycleOwner(this)
-
-        binding.masterListViewModel = masterListViewModel
-
-//        masterListViewModel.text.observe(viewLifecycleOwner, Observer {
-//            binding.textMasterList.text = it
-//        })
+        masterListViewModel.text.observe(viewLifecycleOwner, Observer {
+            binding.textMasterList.text = it
+        })
         return binding.root
     }
 }
