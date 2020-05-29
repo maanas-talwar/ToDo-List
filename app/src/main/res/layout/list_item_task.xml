@@ -7,24 +7,28 @@
 
     <ImageView
         android:id="@+id/done_task_icon"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/clear_task_icon" />
+        tools:srcCompat="@drawable/checkbox_icon" />
 
     <TextView
         android:id="@+id/task_data"
         android:layout_width="0dp"
         android:layout_height="20dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp"
-        app:layout_constraintEnd_toStartOf="@+id/done_task_icon"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/done_task_icon"
         app:layout_constraintTop_toTopOf="parent"
-        tools:text="Wednesday" />
+        tools:text="Task Data" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

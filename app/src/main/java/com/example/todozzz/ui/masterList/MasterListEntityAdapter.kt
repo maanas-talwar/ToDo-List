@@ -7,7 +7,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todozzz.R
-import com.example.todozzz.TaskItemViewHolder
 import com.example.todozzz.database.MasterListEntity
 
 class MasterListEntityAdapter: RecyclerView.Adapter<MasterListEntityAdapter.ViewHolder> () {
@@ -27,7 +26,7 @@ class MasterListEntityAdapter: RecyclerView.Adapter<MasterListEntityAdapter.View
         val item = data[position]
         val res = holder.itemView.context.resources
         holder.taskData.text = item.taskInfo
-        holder.deleteTaskIcon.setImageResource(R.drawable.clear_task_icon)
+        holder.deleteTaskIcon.setImageResource(R.drawable.checkbox_icon)
     }
 
     override fun onCreateViewHolder(
