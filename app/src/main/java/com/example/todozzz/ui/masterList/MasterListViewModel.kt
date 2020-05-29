@@ -1,10 +1,10 @@
 package com.example.todozzz.ui.masterList
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.*
 import com.example.todozzz.database.MasterListDao
 import com.example.todozzz.database.MasterListEntity
-import com.example.todozzz.databinding.FragmentMasterListBinding
 import com.example.todozzz.formatTasks
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -20,7 +20,7 @@ class MasterListViewModel(
 
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
-    private val allTasks = database.getAllTasks()
+    val allTasks = database.getAllTasks()
 
     val taskString = Transformations.map(allTasks) { allTasks ->
         formatTasks(allTasks, application.resources)
@@ -44,14 +44,26 @@ class MasterListViewModel(
 //        }
 //    }
 
-    fun addTask(task_name: String) {
+    fun addTask(task: String) {
         uiScope.launch {
-            var newTask = MasterListEntity(taskInfo = task_name)
+            Log.v("TAG", "Inside addTask")
+            var newTask = MasterListEntity(taskInfo = task)
 //            newTask.taskInfo = task_name
             insert(newTask)
         }
     }
 
+    fun clearTasks() {
+        uiScope.launch {
+            clear()
+        }
+    }
+
+    suspend fun clear() {
+        withContext(Dispatchers.IO) {
+            database.clear()
+        }
+    }
     private suspend fun insert(task: MasterListEntity) {
         withContext(Dispatchers.IO) {
             database.insert(task)

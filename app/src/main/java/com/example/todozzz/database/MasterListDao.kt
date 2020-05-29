@@ -17,10 +17,6 @@ interface MasterListDao {
     @Query("SELECT * FROM master_list_entity ORDER BY taskId DESC")
     fun getAllTasks(): LiveData<List<MasterListEntity>>
 
-//    @Query("SELECT * from master_list_entity WHERE taskId = :key")
-//    fun get(key: Long): MasterListEntity?
-//
-//    @Query("SELECT * FROM master_list_entity ORDER BY taskId DESC LIMIT 1")
-//    fun getLatestTask(): MasterListEntity?
-
+    @Query("DELETE FROM master_list_entity")
+    fun clear()
 }

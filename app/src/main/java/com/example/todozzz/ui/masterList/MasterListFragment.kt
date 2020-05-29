@@ -37,10 +37,21 @@ class MasterListFragment : Fragment() {
             ViewModelProviders.of(
                 this, viewModelFactory).get(MasterListViewModel::class.java)
 
+        binding.addTaskButton.setOnClickListener() {onPressingDone()}
+
+        binding.clearButton.setOnClickListener() {onPressingClear()}
+
         binding.setLifecycleOwner(this)
 
         binding.masterListViewModel = masterListViewModel
 
         return binding.root
+    }
+    fun onPressingDone() {
+        val task: String = binding.taskName.text.toString()
+        binding.masterListViewModel?.addTask(task)
+    }
+    fun onPressingClear() {
+        binding.masterListViewModel?.clearTasks()
     }
 }
