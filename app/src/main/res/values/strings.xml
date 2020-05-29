@@ -11,4 +11,5 @@
     <string name="task_name">Task name</string>
     <string name="add_task">Add Task</string>
 
+    <string name="display_task_name"><![CDATA[<b>Task Data:</b>]]></string>
 </resources>

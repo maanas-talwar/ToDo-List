@@ -1,13 +1,11 @@
 package com.example.todozzz.ui.masterList
 
 import android.app.Application
-import androidx.lifecycle.AndroidViewModel
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.ViewModel
+import androidx.lifecycle.*
 import com.example.todozzz.database.MasterListDao
 import com.example.todozzz.database.MasterListEntity
 import com.example.todozzz.databinding.FragmentMasterListBinding
+import com.example.todozzz.formatTasks
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -22,8 +20,11 @@ class MasterListViewModel(
 
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
-    val AllTasks = database.getAllTasks()
+    private val allTasks = database.getAllTasks()
 
+    val taskString = Transformations.map(allTasks) { allTasks ->
+        formatTasks(allTasks, application.resources)
+    }
 //    private var LatestTask = MutableLiveData<MasterListEntity?>()
 //    init {
 //        initializeTask()
@@ -45,8 +46,8 @@ class MasterListViewModel(
 
     fun addTask(task_name: String) {
         uiScope.launch {
-            val newTask = MasterListEntity()
-            newTask.taskInfo = task_name
+            var newTask = MasterListEntity(taskInfo = task_name)
+//            newTask.taskInfo = task_name
             insert(newTask)
         }
     }
