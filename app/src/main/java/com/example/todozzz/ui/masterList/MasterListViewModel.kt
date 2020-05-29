@@ -25,30 +25,10 @@ class MasterListViewModel(
     val taskString = Transformations.map(allTasks) { allTasks ->
         formatTasks(allTasks, application.resources)
     }
-//    private var LatestTask = MutableLiveData<MasterListEntity?>()
-//    init {
-//        initializeTask()
-//    }
-//    private fun initializeTask() {
-//        uiScope.launch {
-//            LatestTask.value = getLatestTaskFromDatabase()
-//        }
-//    }
-//    private suspend fun getLatestTaskFromDatabase(): MasterListEntity? {
-//        return withContext(Dispatchers.IO) {
-//            var task = database.getLatestTask()
-//            if (task?.taskInfo != "") {
-//                task = null
-//            }
-//            task
-//        }
-//    }
 
     fun addTask(task: String) {
         uiScope.launch {
-            Log.v("TAG", "Inside addTask")
             var newTask = MasterListEntity(taskInfo = task)
-//            newTask.taskInfo = task_name
             insert(newTask)
         }
     }

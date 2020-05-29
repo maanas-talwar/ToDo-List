@@ -3,7 +3,6 @@ package com.example.todozzz.ui.masterList
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todozzz.R
@@ -11,8 +10,7 @@ import com.example.todozzz.database.MasterListEntity
 
 class MasterListEntityAdapter: RecyclerView.Adapter<MasterListEntityAdapter.ViewHolder> () {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
-        val taskData: TextView = itemView.findViewById(R.id.task_data)
-        val deleteTaskIcon: ImageView = itemView.findViewById(R.id.done_task_icon)
+        val taskData: TextView = itemView.findViewById(R.id.task_checkBox)
     }
 
     var data =  listOf<MasterListEntity>()
@@ -26,7 +24,6 @@ class MasterListEntityAdapter: RecyclerView.Adapter<MasterListEntityAdapter.View
         val item = data[position]
         val res = holder.itemView.context.resources
         holder.taskData.text = item.taskInfo
-        holder.deleteTaskIcon.setImageResource(R.drawable.checkbox_icon)
     }
 
     override fun onCreateViewHolder(
