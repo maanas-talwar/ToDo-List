@@ -37,6 +37,15 @@ class MasterListFragment : Fragment() {
             ViewModelProviders.of(
                 this, viewModelFactory).get(MasterListViewModel::class.java)
 
+        val adapter = MasterListEntityAdapter()
+        binding.tasksList.adapter = adapter
+
+        masterListViewModel.allTasks.observe(viewLifecycleOwner, Observer {
+            it?.let {
+                adapter.data = it
+            }
+        })
+
         binding.addTaskButton.setOnClickListener() {onPressingDone()}
 
         binding.clearButton.setOnClickListener() {onPressingClear()}

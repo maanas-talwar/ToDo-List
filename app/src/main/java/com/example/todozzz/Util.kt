@@ -4,7 +4,9 @@ import android.content.res.Resources
 import android.os.Build
 import android.text.Html
 import android.text.Spanned
+import android.widget.TextView
 import androidx.core.text.HtmlCompat
+import androidx.recyclerview.widget.RecyclerView
 import com.example.todozzz.database.MasterListEntity
 
 /**
@@ -27,3 +29,5 @@ fun formatTasks(tasks: List<MasterListEntity>, resources: Resources): Spanned {
         return HtmlCompat.fromHtml(sb.toString(), HtmlCompat.FROM_HTML_MODE_LEGACY)
     }
 }
+
+class TaskItemViewHolder(val textView: TextView): RecyclerView.ViewHolder(textView)
