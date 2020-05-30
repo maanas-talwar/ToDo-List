@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todozzz.R
-import com.example.todozzz.database.MasterListEntity
+import com.example.todozzz.ui.masterList.database.MasterListEntity
 
 class MasterListEntityAdapter : ListAdapter<MasterListEntity, MasterListEntityAdapter.ViewHolder>(TaskDiffCallback()) {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){

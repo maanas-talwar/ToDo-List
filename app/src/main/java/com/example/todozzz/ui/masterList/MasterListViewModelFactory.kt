@@ -3,7 +3,7 @@ package com.example.todozzz.ui.masterList
 import android.app.Application
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.example.todozzz.database.MasterListDao
+import com.example.todozzz.ui.masterList.database.MasterListDao
 
 class MasterListViewModelFactory(
     private val dataSource: MasterListDao,

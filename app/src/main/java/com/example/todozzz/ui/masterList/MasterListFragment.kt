@@ -9,7 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.example.todozzz.R
-import com.example.todozzz.database.TasksDatabase
+import com.example.todozzz.ui.masterList.database.TasksDatabase
 import com.example.todozzz.databinding.FragmentMasterListBinding
 
 class MasterListFragment : Fragment() {

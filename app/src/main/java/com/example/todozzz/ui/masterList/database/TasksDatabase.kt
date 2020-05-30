@@ -1,4 +1,4 @@
-package com.example.todozzz.database
+package com.example.todozzz.ui.masterList.database
 
 import android.content.Context
 import androidx.room.Database

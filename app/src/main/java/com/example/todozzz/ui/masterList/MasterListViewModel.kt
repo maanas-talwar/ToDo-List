@@ -1,11 +1,9 @@
 package com.example.todozzz.ui.masterList
 
 import android.app.Application
-import android.util.Log
 import androidx.lifecycle.*
-import com.example.todozzz.database.MasterListDao
-import com.example.todozzz.database.MasterListEntity
-import com.example.todozzz.formatTasks
+import com.example.todozzz.ui.masterList.database.MasterListDao
+import com.example.todozzz.ui.masterList.database.MasterListEntity
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -21,10 +19,6 @@ class MasterListViewModel(
     private val uiScope = CoroutineScope(Dispatchers.Main + viewModelJob)
 
     val allTasks = database.getAllTasks()
-
-    val taskString = Transformations.map(allTasks) { allTasks ->
-        formatTasks(allTasks, application.resources)
-    }
 
     fun addTask(task: String) {
         uiScope.launch {
