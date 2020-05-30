@@ -10,8 +10,8 @@ data class MasterListEntity(
     var taskId: Long = 0L,
 
     @ColumnInfo(name = "task_info")
-    var taskInfo: String = ""
+    var taskInfo: String = "",
 
-//    @ColumnInfo(name = "is_completed")
-//    var isCompleted: Boolean = false
+    @ColumnInfo(name = "is_completed")
+    var isCompleted: Boolean = false
 )

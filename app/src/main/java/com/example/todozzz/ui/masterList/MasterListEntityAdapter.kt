@@ -4,24 +4,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todozzz.R
 import com.example.todozzz.database.MasterListEntity
 
-class MasterListEntityAdapter: RecyclerView.Adapter<MasterListEntityAdapter.ViewHolder> () {
+class MasterListEntityAdapter : ListAdapter<MasterListEntity, MasterListEntityAdapter.ViewHolder>(TaskDiffCallback()) {
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         val taskData: TextView = itemView.findViewById(R.id.task_checkBox)
     }
 
-    var data =  listOf<MasterListEntity>()
-        set(value) {
-            field = value
-            notifyDataSetChanged()
-        }
-    override fun getItemCount() = data.size
-
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val item = data[position]
+        val item = getItem(position)
         val res = holder.itemView.context.resources
         holder.taskData.text = item.taskInfo
     }
@@ -35,4 +30,15 @@ class MasterListEntityAdapter: RecyclerView.Adapter<MasterListEntityAdapter.View
                 parent, false)
         return ViewHolder(view)
     }
+}
+
+class TaskDiffCallback : DiffUtil.ItemCallback<MasterListEntity>() {
+    override fun areItemsTheSame(oldItem: MasterListEntity, newItem: MasterListEntity): Boolean {
+        return oldItem.taskId == newItem.taskId
+    }
+
+    override fun areContentsTheSame(oldItem: MasterListEntity, newItem: MasterListEntity): Boolean {
+        return oldItem == newItem
+    }
+
 }
