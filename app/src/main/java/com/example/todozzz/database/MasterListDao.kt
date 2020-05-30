@@ -14,7 +14,7 @@ interface MasterListDao {
     @Delete
     fun delete(task: MasterListEntity)
 
-    @Query("SELECT * FROM master_list_entity ORDER BY taskId DESC")
+    @Query("SELECT * FROM master_list_entity ORDER BY taskId ASC")
     fun getAllTasks(): LiveData<List<MasterListEntity>>
 
     @Query("DELETE FROM master_list_entity")
