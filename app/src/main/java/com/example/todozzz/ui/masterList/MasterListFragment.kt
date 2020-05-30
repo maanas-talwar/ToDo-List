@@ -16,15 +16,11 @@ class MasterListFragment : Fragment() {
 
     private lateinit var binding: FragmentMasterListBinding
 
-//    private lateinit var masterListViewModel: MasterListViewModel
-
     override fun onCreateView(
             inflater: LayoutInflater,
             container: ViewGroup?,
             savedInstanceState: Bundle?
     ): View? {
-//        masterListViewModel =
-//                ViewModelProviders.of(this).get(MasterListViewModel::class.java)
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_master_list, container, false)
 
         val application = requireNotNull(this.activity).application

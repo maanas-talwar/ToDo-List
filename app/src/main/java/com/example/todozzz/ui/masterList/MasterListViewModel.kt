@@ -32,25 +32,22 @@ class MasterListViewModel(
             insert(newTask)
         }
     }
-
+    private suspend fun insert(task: MasterListEntity) {
+        withContext(Dispatchers.IO) {
+            database.insert(task)
+        }
+    }
     fun clearTasks() {
         uiScope.launch {
             clear()
         }
     }
 
-    suspend fun clear() {
+    private suspend fun clear() {
         withContext(Dispatchers.IO) {
             database.clear()
         }
     }
-    private suspend fun insert(task: MasterListEntity) {
-        withContext(Dispatchers.IO) {
-            database.insert(task)
-        }
-    }
-
-
 
     override fun onCleared() {
         super.onCleared()
