@@ -12,4 +12,20 @@
     <string name="add_task">Add Task</string>
 
     <string name="display_task_name"><![CDATA[<b>Task Data:</b>]]></string>
+    <string name="about_heading">TextView</string>
+    <string name="about">About</string>
+
+
+    <string name="about_data">A ToDo list manager to boost your productivity.\n\n    The tasks are divided into 3 categories:\n
+<!--    \t<b>Most Important Tasks</b> - tasks requiring immediate attention\n-->
+<!--    \t<b>Weekly List</b> - goals for the next 7 days\n-->
+<!--    \t<b>Master List</b> - long term goals\n\n-->
+<!--<b>Usage:</b>\n-->
+<!--    You can save the tasks by enter the task name and clicking \'Add Task\' button.\n-->
+<!--    You can clear the created tasks by clicking 'Clear' button.\n\n-->
+
+<!--    Enjoy this ToDo list manager and achieve your goals. \n-->
+    </string>
+
 </resources>
+

@@ -16,5 +16,9 @@
             android:id="@+id/nav_master_list"
             android:icon="@drawable/master_list_icon"
             android:title="@string/menu_master_list" />
+        <item
+            android:id="@+id/nav_about"
+            android:icon="@drawable/about"
+            android:title="@string/about" />
     </group>
 </menu>

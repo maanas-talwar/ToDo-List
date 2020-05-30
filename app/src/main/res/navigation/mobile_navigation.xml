@@ -22,4 +22,10 @@
         android:name="com.example.todozzz.ui.weeklyList.WeeklyListFragment"
         android:label="@string/menu_weekly_list"
         tools:layout="@layout/fragment_weekly_list" />
+
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="com.example.todozzz.AboutFragment"
+        android:label="@string/about_data"
+        tools:layout="@layout/fragment_about" />
 </navigation>
