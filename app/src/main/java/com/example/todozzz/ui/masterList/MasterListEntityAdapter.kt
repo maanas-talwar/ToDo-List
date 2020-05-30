@@ -17,7 +17,6 @@ class MasterListEntityAdapter : ListAdapter<MasterListEntity, MasterListEntityAd
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = getItem(position)
-        val res = holder.itemView.context.resources
         holder.taskData.text = item.taskInfo
     }
 

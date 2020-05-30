@@ -28,7 +28,7 @@ class MasterListViewModel(
 
     fun addTask(task: String) {
         uiScope.launch {
-            var newTask = MasterListEntity(taskInfo = task)
+            val newTask = MasterListEntity(taskInfo = task)
             insert(newTask)
         }
     }

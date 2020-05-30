@@ -27,11 +27,6 @@ class MainActivity : AppCompatActivity() {
 
         setSupportActionBar(binding.appBar.toolbar)
 
-        binding.appBar.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                    .setAction("Action", null).show()
-        }
-
         val navController = findNavController(R.id.nav_host_fragment)
 
         // Passing each menu ID as a set of Ids because each
