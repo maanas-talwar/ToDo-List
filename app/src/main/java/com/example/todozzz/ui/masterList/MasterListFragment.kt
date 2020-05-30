@@ -54,6 +54,7 @@ class MasterListFragment : Fragment() {
     }
     fun onPressingDone() {
         val task: String = binding.taskName.text.toString()
+        binding.taskName.getText().clear();
         binding.masterListViewModel?.addTask(task)
     }
     fun onPressingClear() {

@@ -32,7 +32,9 @@
             android:id="@+id/add_task_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:background="@color/design_default_color_secondary_variant"
             android:text="@string/add_task"
+            android:textColor="@color/app_icon_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent" />
 
@@ -52,7 +54,9 @@
             android:id="@+id/clear_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Clear"
+            android:background="@color/design_default_color_error"
+            android:text="@string/clear"
+            android:textColor="@color/app_icon_background"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 

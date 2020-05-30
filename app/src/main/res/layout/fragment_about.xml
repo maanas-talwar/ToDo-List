@@ -29,6 +29,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="582dp"
                     android:fontFamily="@font/abhaya_libre_medium"
+                    android:padding="8dp"
                     android:textColor="@color/textColour"
                     android:textSize="18sp"
                     tools:text="@string/about" />
@@ -49,7 +50,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/jacques_francois"
-            android:text="ToDozzz"
+            android:padding="16dp"
+            android:text="@string/todozzz"
             android:textColor="@color/colorPrimaryDark"
             android:textSize="42sp"
             app:layout_constraintEnd_toEndOf="parent"

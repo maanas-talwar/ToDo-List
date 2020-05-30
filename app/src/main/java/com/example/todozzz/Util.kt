@@ -16,7 +16,6 @@ import com.example.todozzz.database.MasterListEntity
 fun formatTasks(tasks: List<MasterListEntity>, resources: Resources): Spanned {
     val sb = StringBuilder()
     sb.apply {
-//        append(resources.getString(R.string.title))
         tasks.forEach {
             append("<br>")
             append(resources.getString(R.string.display_task_name))
@@ -29,5 +28,3 @@ fun formatTasks(tasks: List<MasterListEntity>, resources: Resources): Spanned {
         return HtmlCompat.fromHtml(sb.toString(), HtmlCompat.FROM_HTML_MODE_LEGACY)
     }
 }
-
-class TaskItemViewHolder(val textView: TextView): RecyclerView.ViewHolder(textView)
