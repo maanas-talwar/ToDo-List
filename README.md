@@ -1,4 +1,4 @@
-ToDozzz
+ToDo List
 ================
 
 ## Introduction
